@@ -22,7 +22,7 @@ export const Header = () => {
 
     useEffect(() => {
         if(searchValue && !(location.pathname.includes('catalog'))){
-            navigate('ave-shop//catalog')
+            navigate('ave-shop/catalog')
         }
         dispatch(setSearch(searchValue))
     },[searchValue])
@@ -55,8 +55,8 @@ export const Header = () => {
                         <h3>Currency : <span>GBP</span></h3>
                         <div className="header_header__info">
                             <div className="header_header__info__btns">
-                                <NavLink to={'/auth'}><button>Register</button></NavLink>
-                                <NavLink to={'/auth'}><button>Sign in</button></NavLink>
+                                <NavLink to={'ave-shop/auth'}><button>Register</button></NavLink>
+                                <NavLink to={'ave-shop/auth'}><button>Sign in</button></NavLink>
                             </div>
                             <CartButton/>
                         </div>
@@ -66,7 +66,7 @@ export const Header = () => {
             <div className="container">
                 <div className="header_menu">
                     <div className="header_logo">
-                        <NavLink to={'/'}><h1><span>avenue</span> fashion</h1></NavLink>
+                        <NavLink to={'ave-shop/'}><h1><span>avenue</span> fashion</h1></NavLink>
                     </div>
                     <div className="header_menu__content">
                         <nav className={'menu'} ref={menu}>
