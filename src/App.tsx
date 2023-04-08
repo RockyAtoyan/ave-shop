@@ -21,15 +21,15 @@ const App = () => {
 
     const links = useMemo(() => {
         return[...Array.from(new Set(items.map(category => category.values ? Object.keys(category.values) : '').flat().map(l => l.toLowerCase()))).map((link,index) => {
-            return <Route key={index} path={'mens/' + link.toLowerCase().split(' ').join('') } element={<Catalog />}>
+            return <Route key={index} path={'ave-shop/mens/' + link.toLowerCase().split(' ').join('') } element={<Catalog />}>
                 <Route path={':category'} element={<Catalog />} />
             </Route>
         }),...Array.from(new Set(items.map(category => category.values ? Object.keys(category.values) : '').flat().map(l => l.toLowerCase()))).map((link,index) => {
-            return <Route key={index} path={'womens/' + link.toLowerCase().split(' ').join('')  } element={<Catalog />}>
+            return <Route key={index} path={'ave-shop/womens/' + link.toLowerCase().split(' ').join('')  } element={<Catalog />}>
                 <Route path={':category'} element={<Catalog />} />
             </Route>
         }),...Array.from(new Set(items.map(category => category.values ? Object.keys(category.values) : '').flat().map(l => l.toLowerCase()))).map((link,index) => {
-            return <Route key={index} path={'lookbook/' + link.toLowerCase().split(' ').join('')  } element={<Lookbook />}>
+            return <Route key={index} path={'ave-shop/lookbook/' + link.toLowerCase().split(' ').join('')  } element={<Lookbook />}>
                 <Route path={':type'} element={<Lookbook />} />
             </Route>
         })]
@@ -42,15 +42,15 @@ const App = () => {
             <main className={'main'}>
                 <Routes>
                     {links}
-                    <Route path={'/'} element={<Home />} />
-                    <Route path={'thebrand'} element={<Brand />} />
-                    <Route path={'localstores'} element={<Stores />} />
-                    <Route path={'cart'} element={<Cart />} />
-                    <Route path={'product'} element={<Product />}>
+                    <Route path={'ave-shop/'} element={<Home />} />
+                    <Route path={'ave-shop/thebrand'} element={<Brand />} />
+                    <Route path={'ave-shop/localstores'} element={<Stores />} />
+                    <Route path={'ave-shop/cart'} element={<Cart />} />
+                    <Route path={'ave-shop/product'} element={<Product />}>
                         <Route path={':id'} element={<Product />} />
                     </Route>
-                    <Route path={'catalog'} element={<SearchCatalog />} />
-                    <Route path={'auth'} element={<Auth />} />
+                    <Route path={'ave-shop/catalog'} element={<SearchCatalog />} />
+                    <Route path={'ave-shop/auth'} element={<Auth />} />
                 </Routes>
             </main>
             <Footer />

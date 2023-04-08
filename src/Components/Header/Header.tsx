@@ -22,7 +22,7 @@ export const Header = () => {
 
     useEffect(() => {
         if(searchValue && !(location.pathname.includes('catalog'))){
-            navigate('/catalog')
+            navigate('ave-shop//catalog')
         }
         dispatch(setSearch(searchValue))
     },[searchValue])
