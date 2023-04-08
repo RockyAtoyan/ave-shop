@@ -76,7 +76,7 @@ export const Product = () => {
                 <div className="product_inner">
                     <div className="product_content">
                         <div className="product_content__img ibg">
-                            <img src={process.env.PUBLIC_URL + product.image} alt=""/>
+                            <img src={product.image} alt=""/>
                         </div>
                         <div className="product_content__item">
                             <h2 className="product_content__item__title">{product.name}</h2>
