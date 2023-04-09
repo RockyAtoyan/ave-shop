@@ -21,15 +21,15 @@ const App = () => {
 
     const links = useMemo(() => {
         return[...Array.from(new Set(items.map(category => category.values ? Object.keys(category.values) : '').flat().map(l => l.toLowerCase()))).map((link,index) => {
-            return <Route key={index} path={'ave-shop/mens/' + link.toLowerCase().split(' ').join('') } element={<Catalog />}>
+            return <Route key={index} path={'/mens/' + link.toLowerCase().split(' ').join('') } element={<Catalog />}>
                 <Route path={':category'} element={<Catalog />} />
             </Route>
         }),...Array.from(new Set(items.map(category => category.values ? Object.keys(category.values) : '').flat().map(l => l.toLowerCase()))).map((link,index) => {
-            return <Route key={index} path={'ave-shop/womens/' + link.toLowerCase().split(' ').join('')  } element={<Catalog />}>
+            return <Route key={index} path={'/womens/' + link.toLowerCase().split(' ').join('')  } element={<Catalog />}>
                 <Route path={':category'} element={<Catalog />} />
             </Route>
         }),...Array.from(new Set(items.map(category => category.values ? Object.keys(category.values) : '').flat().map(l => l.toLowerCase()))).map((link,index) => {
-            return <Route key={index} path={'ave-shop/lookbook/' + link.toLowerCase().split(' ').join('')  } element={<Lookbook />}>
+            return <Route key={index} path={'/lookbook/' + link.toLowerCase().split(' ').join('')  } element={<Lookbook />}>
                 <Route path={':type'} element={<Lookbook />} />
             </Route>
         })]

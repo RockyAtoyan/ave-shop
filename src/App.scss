@@ -1336,7 +1336,7 @@ button {
 .mylookbook{
   &_items{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(380px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
     gap: 15px;
     &>*{
       height: 500px;
@@ -1942,7 +1942,37 @@ footer {
   }
 }
 
+@media screen and (max-width: 900px){
+  .product_content{
+    display: grid;
+    grid-template: 500px 1fr / 1fr;
+    gap: 20px;
+  }
+  .product_content__img{
+    width: 70%;
+    margin: 0 auto;
+  }
+  .product_info__categories{
+    flex-direction: column;
+    button{
+      width: 100%;
+    }
+  }
+}
 @media(max-width: 768px) {
+  .product_content__item__select{
+    flex-direction: column;
+  }
+  .product_content__item__actions{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .product_content__item__actions > *:nth-child(3){
+    border: 0;
+  }
+  .product_content__item__btns{
+    grid-template-columns: 1fr;
+  }
   .stores_map {
     flex-direction: column;
   }

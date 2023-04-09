@@ -22,7 +22,7 @@ export const Header = () => {
 
     useEffect(() => {
         if(searchValue && !(location.pathname.includes('catalog'))){
-            navigate('ave-shop/catalog')
+            navigate('/catalog')
         }
         dispatch(setSearch(searchValue))
     },[searchValue])
@@ -66,7 +66,7 @@ export const Header = () => {
             <div className="container">
                 <div className="header_menu">
                     <div className="header_logo">
-                        <NavLink to={'ave-shop/'}><h1><span>avenue</span> fashion</h1></NavLink>
+                        <NavLink to={'/'}><h1><span>avenue</span> fashion</h1></NavLink>
                     </div>
                     <div className="header_menu__content">
                         <nav className={'menu'} ref={menu}>

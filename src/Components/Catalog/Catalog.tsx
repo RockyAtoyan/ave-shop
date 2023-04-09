@@ -18,7 +18,8 @@ export const Catalog = () => {
     const sortProducts = useCallback((a:typeof products[0],b:typeof products[0]) => sort === 'popular' ? b.rating - a.rating : (sort === 'new arrivals' ? a.arrivalDaysLeft - b.arrivalDaysLeft : (sort === 'best sellers' ? a.sellRating - b.sellRating : 0)),[sort])
 
     useEffect(() => {
-        setType([...location.pathname.split('/').slice(2),params.category])
+        debugger
+        setType([...location.pathname.split('/').slice(1),params.category])
     },[params,location])
 
     const items = products.filter(product => product.type.sex === type[0] && product.type.clothes.type === type[1] && product.type.clothes.name.toLowerCase().split(' ').join('').split('`').join('') === type[2]).sort(sortProducts)
