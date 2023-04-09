@@ -24,7 +24,7 @@ export const HomeProduct: FC<{ product: ProductType }> = ({product}) => {
 
 
     return <div className={'home_products__item ibg'}>
-        <NavLink to={`/ave-shop/product/${product.id}`}>
+        <NavLink to={`/product/${product.id}`}>
             <img src={product.image} alt=""/>
             <h3><span>£</span>{product.price}</h3>
             <InfoIcon className="hover"/>

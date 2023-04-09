@@ -42,15 +42,15 @@ const App = () => {
             <main className={'main'}>
                 <Routes>
                     {links}
-                    <Route path={'ave-shop/'} element={<Home />} />
-                    <Route path={'ave-shop/thebrand'} element={<Brand />} />
-                    <Route path={'ave-shop/localstores'} element={<Stores />} />
-                    <Route path={'ave-shop/cart'} element={<Cart />} />
-                    <Route path={'ave-shop/product'} element={<Product />}>
+                    <Route path={'/'} element={<Home />} />
+                    <Route path={'/thebrand'} element={<Brand />} />
+                    <Route path={'/localstores'} element={<Stores />} />
+                    <Route path={'/cart'} element={<Cart />} />
+                    <Route path={'/product'} element={<Product />}>
                         <Route path={':id'} element={<Product />} />
                     </Route>
-                    <Route path={'ave-shop/catalog'} element={<SearchCatalog />} />
-                    <Route path={'ave-shop/auth'} element={<Auth />} />
+                    <Route path={'/catalog'} element={<SearchCatalog />} />
+                    <Route path={'/auth'} element={<Auth />} />
                 </Routes>
             </main>
             <Footer />

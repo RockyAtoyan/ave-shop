@@ -35,7 +35,7 @@ export const Catalog = () => {
                 })}
             </div> : <div className={'cart_empty'}>
                 <h2>There are no such products</h2>
-                <NavLink to={'/ave-shop/'}>
+                <NavLink to={'/'}>
                     <button>To the home page</button>
                 </NavLink>
             </div>}

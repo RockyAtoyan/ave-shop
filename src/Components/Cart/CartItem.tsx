@@ -19,7 +19,7 @@ export const CartItem: FC<{ item: any }> = ({item}) => {
                 <img src={item.image} alt=""/>
             </div>
             <div className="cart_item__info">
-                <NavLink to={`/ave-shop/product/${item.productId}`}>
+                <NavLink to={`/product/${item.productId}`}>
                     <h2>{item.name.slice(0,1).toUpperCase() + item.name.slice(1)}</h2>
                 </NavLink>
                 <h3>{item.currentColor}</h3>

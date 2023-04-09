@@ -55,8 +55,8 @@ export const Header = () => {
                         <h3>Currency : <span>GBP</span></h3>
                         <div className="header_header__info">
                             <div className="header_header__info__btns">
-                                <NavLink to={'ave-shop/auth'}><button>Register</button></NavLink>
-                                <NavLink to={'ave-shop/auth'}><button>Sign in</button></NavLink>
+                                <NavLink to={'/auth'}><button>Register</button></NavLink>
+                                <NavLink to={'/auth'}><button>Sign in</button></NavLink>
                             </div>
                             <CartButton/>
                         </div>

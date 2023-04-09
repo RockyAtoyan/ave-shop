@@ -20,7 +20,7 @@ export const MenuItem: FC<PropsType> = ({name,values,setMode,mode}) => {
                     {uiName === 'Delete' && name.toLowerCase().split(' ').join('') === 'lookbook' ? <a onClick={() => {
                         Object.keys(localStorage).map(key => JSON.parse(localStorage.getItem(key) + '')).filter(item => item.type === 'ave-lookbook').forEach(item => localStorage.removeItem(item.id))
                         dispatch(setMyLookbook(getLCItems('ave-lookbook')))
-                    }}>{uiName}</a> : <NavLink className={'menu_link'} to={`/ave-shop/${name.toLowerCase().split(' ').join('')}/${item.name.toLowerCase().split(' ').join('')}/${link}`}>{uiName}</NavLink>}
+                    }}>{uiName}</a> : <NavLink className={'menu_link'} to={`/${name.toLowerCase().split(' ').join('')}/${item.name.toLowerCase().split(' ').join('')}/${link}`}>{uiName}</NavLink>}
                 </li>
             })}
         </ul>
@@ -30,7 +30,7 @@ export const MenuItem: FC<PropsType> = ({name,values,setMode,mode}) => {
 
 
     return <li className={mode === name ? 'active' : ''}>
-        {values && Object.keys(values).length > 0 ? <h3 onClick={(event) => mode === name ? setMode('') : setMode(name)}>{name}</h3> : <NavLink className={'menu_link'} to={`/ave-shop/${name.split(' ').join('')}`}>{name}</NavLink>}
+        {values && Object.keys(values).length > 0 ? <h3 onClick={(event) => mode === name ? setMode('') : setMode(name)}>{name}</h3> : <NavLink className={'menu_link'} to={`/${name.split(' ').join('')}`}>{name}</NavLink>}
         {mode === name && <>
             <ul className={'submenu'}>
                 <div className={'submenu__links'}>

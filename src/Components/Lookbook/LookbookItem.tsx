@@ -20,7 +20,7 @@ export const LookbookItem:FC<{item:any}> = ({item}) => {
         </div>
         <div className="hover_block">
             <button>
-                <NavLink to={`/ave-shop/product/${item.productId}`}><Info /></NavLink>
+                <NavLink to={`/product/${item.productId}`}><Info /></NavLink>
             </button>
             <button style={{color:'red'}} onClick={() => {
                 localStorage.removeItem(item.id)

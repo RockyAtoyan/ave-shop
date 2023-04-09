@@ -20,7 +20,7 @@ export const CartButton = () => {
 
 
     return <div className={'cart_btn'}>
-        <NavLink to={'ave-shop/cart'}>
+        <NavLink to={'/cart'}>
             <button>
             <span>
                 <ShoppingCartIcon/>
