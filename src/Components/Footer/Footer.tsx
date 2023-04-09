@@ -21,19 +21,19 @@ export const Footer = () => {
                         </div>
                         <ul className="footer_item__links">
                             <li>
-                                <NavLink to={'/thebrand'}>The brand</NavLink>
+                                <NavLink to={'/ave-shop/thebrand'}>The brand</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/localstores'}>Local stores</NavLink>
+                                <NavLink to={'/ave-shop/localstores'}>Local stores</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Customer service</NavLink>
+                                <NavLink to={'/ave-shop/'}>Customer service</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Privacy & cookies</NavLink>
+                                <NavLink to={'/ave-shop/'}>Privacy & cookies</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Site map</NavLink>
+                                <NavLink to={'/ave-shop/'}>Site map</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -44,19 +44,19 @@ export const Footer = () => {
                         </div>
                         <ul className="footer_item__links">
                             <li>
-                                <NavLink to={'/'}>Shopping & returns</NavLink>
+                                <NavLink to={'/ave-shop/'}>Shopping & returns</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Secure shopping</NavLink>
+                                <NavLink to={'/ave-shop/'}>Secure shopping</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Testimonials</NavLink>
+                                <NavLink to={'/ave-shop/'}>Testimonials</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Award winning</NavLink>
+                                <NavLink to={'/ave-shop/'}>Award winning</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Ethical trading</NavLink>
+                                <NavLink to={'/ave-shop/'}>Ethical trading</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -67,22 +67,22 @@ export const Footer = () => {
                         </div>
                         <ul className="footer_item__links">
                             <li>
-                                <NavLink to={'/auth'}>Sign in</NavLink>
+                                <NavLink to={'/ave-shop/auth'}>Sign in</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/auth'}>Register</NavLink>
+                                <NavLink to={'/ave-shop/auth'}>Register</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/cart'}>View cart</NavLink>
+                                <NavLink to={'/ave-shop/cart'}>View cart</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/lookbook/yourlookbook/viewandedit'}>View your lookbook</NavLink>
+                                <NavLink to={'/ave-shop/lookbook/yourlookbook/viewandedit'}>View your lookbook</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Track an order</NavLink>
+                                <NavLink to={'/ave-shop/'}>Track an order</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Update information</NavLink>
+                                <NavLink to={'/ave-shop/'}>Update information</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -93,22 +93,22 @@ export const Footer = () => {
                         </div>
                         <ul className="footer_item__links">
                             <li>
-                                <NavLink to={'/lookbook/ourlookbook/latestposts(mixed)'}>Latest posts</NavLink>
+                                <NavLink to={'/ave-shop/lookbook/ourlookbook/latestposts(mixed)'}>Latest posts</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Men`s lookbook</NavLink>
+                                <NavLink to={'/ave-shop/'}>Men`s lookbook</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Women`s lookbook</NavLink>
+                                <NavLink to={'/ave-shop/'}>Women`s lookbook</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Lookbooks RSS feed</NavLink>
+                                <NavLink to={'/ave-shop/'}>Lookbooks RSS feed</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/lookbook/yourlookbook/viewandedit'}>View your lookbook</NavLink>
+                                <NavLink to={'/ave-shop/lookbook/yourlookbook/viewandedit'}>View your lookbook</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/lookbook/yourlookbook/viewandedit'} onClick={() => {
+                                <NavLink to={'/ave-shop/lookbook/yourlookbook/viewandedit'} onClick={() => {
                                     Object.keys(localStorage).map(key => JSON.parse(localStorage.getItem(key) + '')).filter(item => item.type === 'ave-lookbook').forEach(item => localStorage.removeItem(item.id))
                                     dispatch(setMyLookbook(getLCItems('ave-lookbook')))
                                 }}>Delete your lookbook</NavLink>
@@ -122,14 +122,14 @@ export const Footer = () => {
                         </div>
                         <ul className="footer_item__links">
                             <li>
-                                <NavLink to={'/'}>Head Office: Avenue Fashion,
+                                <NavLink to={'/ave-shop/'}>Head Office: Avenue Fashion,
                                     180-182 Regent Street, London.</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Telephone: 0123-456-789</NavLink>
+                                <NavLink to={'/ave-shop/'}>Telephone: 0123-456-789</NavLink>
                             </li>
                             <li>
-                                <NavLink to={'/'}>Email: support@yourwebsite.com</NavLink>
+                                <NavLink to={'/ave-shop/'}>Email: support@yourwebsite.com</NavLink>
                             </li>
                         </ul>
                     </div>

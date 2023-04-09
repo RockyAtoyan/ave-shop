@@ -51,7 +51,7 @@ export const Cart = () => {
                 </div>
             </> : <div className={'cart_empty'}>
                 <h2>The cart is still empty</h2>
-                <NavLink to={'/'}>
+                <NavLink to={'/ave-shop/'}>
                     <button>To the home page</button>
                 </NavLink>
             </div>}

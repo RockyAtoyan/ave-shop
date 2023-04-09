@@ -19,7 +19,7 @@ export const SearchCatalog = () => {
             })}
         </div> : <div className={'cart_empty'}>
             <h2>There are no such products</h2>
-            <NavLink to={'/'} onClick={() => {
+            <NavLink to={'/ave-shop/'} onClick={() => {
                 dispatch(setSearch(''))
             }}>
                 <button>To the home page</button>

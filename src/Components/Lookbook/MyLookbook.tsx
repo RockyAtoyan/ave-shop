@@ -26,7 +26,7 @@ export const MyLookbook = () => {
                 })}
             </div> : <div className={'cart_empty'}>
                 <h2>Your lookbook is still empty</h2>
-                <NavLink to={'/'}>
+                <NavLink to={'/ave-shop/'}>
                     <button>To the home page</button>
                 </NavLink>
             </div>}

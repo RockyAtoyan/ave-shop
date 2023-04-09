@@ -9,7 +9,7 @@ export const Home = () => {
             <section className="intro_inner">
                 <div className="container">
                     <div className="intro" >
-                        <img src="../../assets/images/home/intro.png"  alt="" className="intro_img"/>
+                        <img src="/ave-shop/images/home/intro.png"  alt="" className="intro_img"/>
                         <div className="intro_title">
                             <h2>
                             <span>

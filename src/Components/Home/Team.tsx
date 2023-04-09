@@ -8,7 +8,7 @@ export const Team = () => {
         <div className="team_items">
             <div className="team_item">
                 <div className="team_item__img">
-                    <img src="../../assets/images/home/team_05.png" alt=""/>
+                    <img src="/ave-shop/images/home/team_05.png" alt=""/>
                 </div>
                 <div className="team_item__content ">
                     <h2><span>men’s</span> lookbook</h2>
@@ -25,7 +25,7 @@ export const Team = () => {
 
             <div className="team_item">
                 <div className="team_item__img">
-                    <img src="../../assets/images/home/team_07.png" alt=""/>
+                    <img src="/ave-shop/images/home/team_07.png" alt=""/>
                 </div>
                 <div className="team_item__content">
                     <h2><span>women’s</span> lookbook</h2>
@@ -42,7 +42,7 @@ export const Team = () => {
 
             <div className="team_item">
                 <div className="team_item__img">
-                    <img src="../../assets/images/home/team_03_03.png " alt=""/>
+                    <img src="/ave-shop/images/home/team_03.png " alt=""/>
                 </div>
                 <div className="team_item__content">
                     <h2><span>your</span> lookbook</h2>

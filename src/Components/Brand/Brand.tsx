@@ -10,10 +10,10 @@ export const Brand = () => {
                     <div className="brand_main__cols">
                         <div className="brand_main__col">
                             <div className="brand_main__item">
-                                <img src="../../assets/images/brand/brand_03.png" alt=""/>
+                                <img src="./images/brand/brand_03.png" alt=""/>
                             </div>
                             <div className="brand_main__item">
-                                <img src="../../assets/images/brand/brand_09.png" alt=""/>
+                                <img src="./images/brand/brand_09.png" alt=""/>
                                 <div className="brand_main__item__content">
                                     <h2>our values, vision and strategy</h2>
                                     <h3>The above image would be a great place for an advertising video</h3>
@@ -33,7 +33,7 @@ export const Brand = () => {
                                 </div>
                             </div>
                             <div className="brand_main__item">
-                                <img src="../../assets/images/brand/brand_06.png" alt=""/>
+                                <img src="./images/brand/brand_06.png" alt=""/>
                                 <div className="brand_main__item__content">
                                     <h2>Ethical trading</h2>
                                     <h3>we oversee the working conditions of the people in the supply chain</h3>
@@ -42,7 +42,7 @@ export const Brand = () => {
                                 </div>
                             </div>
                             <div className="brand_main__item">
-                                <img src="../../assets/images/brand/brand_10.png" alt=""/>
+                                <img src="./images/brand/brand_10.png" alt=""/>
                             </div>
                         </div>
                     </div>

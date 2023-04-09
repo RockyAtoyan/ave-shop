@@ -22,7 +22,7 @@ export const PostItem:FC<{post:any,lookbook:any,products:any}>= ({post,lookbook,
         </div>
         <div className="hover_block">
             <button>
-                <NavLink to={`/product/${post.productId}`}><Info /></NavLink>
+                <NavLink to={`/ave-shop/product/${post.productId}`}><Info /></NavLink>
             </button>
             <button style={lookbookProduct ? {color:'red'} : {}} onClick={() => {
                 if(!lookbookProduct) {
