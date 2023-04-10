@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ave-shop/static/css/main.b1b0a931.css",
-    "main.js": "/ave-shop/static/js/main.7cdc891d.js",
+    "main.js": "/ave-shop/static/js/main.e9fc35e4.js",
     "static/js/787.0cc340ab.chunk.js": "/ave-shop/static/js/787.0cc340ab.chunk.js",
     "index.html": "/ave-shop/index.html",
     "main.b1b0a931.css.map": "/ave-shop/static/css/main.b1b0a931.css.map",
-    "main.7cdc891d.js.map": "/ave-shop/static/js/main.7cdc891d.js.map",
+    "main.e9fc35e4.js.map": "/ave-shop/static/js/main.e9fc35e4.js.map",
     "787.0cc340ab.chunk.js.map": "/ave-shop/static/js/787.0cc340ab.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b1b0a931.css",
-    "static/js/main.7cdc891d.js"
+    "static/js/main.e9fc35e4.js"
   ]
 }
