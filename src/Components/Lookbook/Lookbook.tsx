@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../store";
 import {Favorite, HeartBrokenRounded, Info} from "@mui/icons-material";
 import {FC, useCallback, useEffect, useMemo, useState} from "react";
-import {NavLink, useParams} from "react-router-dom";
+import {NavLink, useLocation, useParams} from "react-router-dom";
 import {MyLookbook} from "./MyLookbook";
 import {AddLookbookToLocalStorage, getLCItems} from "../Product";
 import {setMyLookbook} from "../shopReducer";
@@ -13,8 +13,13 @@ import {PostItem} from "./PostItem";
 export const postsProductsCategories = ['latest','like','cheap','expensive']
 
 export const CatalogSort:FC<{sort:string,setSort:any,likeMode:boolean}> = ({sort,setSort,likeMode}) => {
+    const location = useLocation()
 
     const [showMode,setShowMode] = useState(false)
+
+    useEffect(() => {
+        setShowMode(false)
+    },[location.pathname])
 
     const sortBtns = useMemo(() =>
         postsProductsCategories.filter(name => !likeMode ? name !== 'like' : true).map((category,index) => {

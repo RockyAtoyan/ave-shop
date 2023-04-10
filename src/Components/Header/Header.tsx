@@ -17,6 +17,7 @@ export const Header = () => {
 
     const [showMode, setShowMode] = useState('')
     const [searchValue, setSearchValue] = useState('')
+    const burger = useRef<HTMLDivElement>(null)
 
     const search = useSelector((state: AppStateType) => state.shop.searchValue)
 
@@ -38,12 +39,13 @@ export const Header = () => {
     const menu = useRef<HTMLDivElement>(null)
 
     const catalogItems = categories.map((category, index) => {
-        // @ts-ignore
         return <MenuItem key={index} name={category.name} values={category.values} setMode={setShowMode}
                          mode={showMode}/>
     })
 
     useEffect(() => {
+        burger.current?.classList.remove('active')
+        menu.current?.classList.remove('active')
         setShowMode('')
     },[location.pathname])
 
@@ -82,7 +84,7 @@ export const Header = () => {
                                 </button>
                             </div>
                         </nav>
-                        <div className="burger_menu" onClick={(event) => {
+                        <div className="burger_menu" ref={burger} onClick={(event) => {
                             menu.current?.classList.toggle('active')
                             event.currentTarget.classList.toggle('active')
                         }}></div>

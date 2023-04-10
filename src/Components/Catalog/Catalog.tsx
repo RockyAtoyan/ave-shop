@@ -19,7 +19,6 @@ export const Catalog = () => {
     const sortProducts = useCallback((a:any,b:any) => sort === 'latest' ? a.arrivalDaysLeft - b.arrivalDaysLeft : (sort === 'like' ? b.likeCount - a.likeCount : (sort === 'cheap' ? a.price - b.price : b.price - a.price)),[sort])
 
     useEffect(() => {
-        debugger
         setType([...location.pathname.split('/').slice(1),params.category])
     },[params,location])
 
