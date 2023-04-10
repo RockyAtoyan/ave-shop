@@ -31,7 +31,7 @@ export const CatalogSort:FC<{sort:string,setSort:any,likeMode:boolean}> = ({sort
             if (showMode) setShowMode(false)
         }
         }>
-            <h3 onClick={() => setShowMode(prevState => !prevState)}>{sort.toUpperCase()}</h3>
+            <h3 onClick={() => setShowMode(prevState => !prevState)}>{sort === 'latest' ? 'latest' : (sort === 'like' ? 'most liked' : (sort === 'cheap' ? 'price low to high' : 'price high to low'))}</h3>
             <div className={showMode ? 'active' : ''}>
                 {sortBtns}
             </div>
