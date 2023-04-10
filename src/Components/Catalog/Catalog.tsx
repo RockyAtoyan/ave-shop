@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {AppStateType} from "../store";
 import {Sort} from "../Categories";
 import {HomeProduct} from "../Home/HomeProduct";
+import {CatalogSort} from "../Lookbook/Lookbook";
 
 
 export const Catalog = () => {
@@ -11,11 +12,11 @@ export const Catalog = () => {
     const location = useLocation()
 
     const [type,setType] = useState<any>([])
+    const [sort,setSort] = useState('latest')
 
     const products = useSelector((state:AppStateType) => state.shop.products)
-    const sort = useSelector((state:AppStateType) => state.shop.sort)
 
-    const sortProducts = useCallback((a:typeof products[0],b:typeof products[0]) => sort === 'popular' ? b.rating - a.rating : (sort === 'new arrivals' ? a.arrivalDaysLeft - b.arrivalDaysLeft : (sort === 'best sellers' ? a.sellRating - b.sellRating : 0)),[sort])
+    const sortProducts = useCallback((a:any,b:any) => sort === 'latest' ? a.arrivalDaysLeft - b.arrivalDaysLeft : (sort === 'like' ? b.likeCount - a.likeCount : (sort === 'cheap' ? a.price - b.price : b.price - a.price)),[sort])
 
     useEffect(() => {
         debugger
@@ -28,8 +29,8 @@ export const Catalog = () => {
         <div className="container">
             <div className="line"></div>
         </div>
-        <Sort />
         <div className="container">
+            <CatalogSort likeMode={false} sort={sort} setSort={(value:string) => setSort(value)} />
             {items.length ? <div className={'catalog_products'}>
                 {items.map(product => {
                     return <HomeProduct key={product.id} product={product} />
