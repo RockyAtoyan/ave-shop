@@ -43,6 +43,7 @@ export const Product = () => {
 
     const [currentCategory,setCurrentCategory] = useState('description')
     const [id, setId] = useState<any>(-1)
+    const [errorMode, setErrorMode] = useState<any>(false)
 
     const product = useSelector((state: AppStateType) => state.shop.products).filter(product => product.id === Number(id))[0]
 
@@ -127,6 +128,9 @@ export const Product = () => {
                                 </ul>
                             </div>
                             <div className="product_content__item__select">
+                                 <span className={errorMode ? 'active' : ''}>
+                                        Choose color and size!
+                                 </span>
                                 <Select title={'color'} type={'select'} currentValue={currentColor} values={product.colors} onSelect={(value:string) => setCurrentColor(value)} />
                                 <Select title={'size'} type={'select'} currentValue={currentSize} values={product.sizes} onSelect={(value:string) => setCurrentSize(value)} />
                                 <Select title={'qty'} type={'qty'} currentValue={currentQuanity} values={[]} onSelect={(value:number) => value && setCurrentQuanity(value)} />
@@ -134,8 +138,10 @@ export const Product = () => {
                             <div className="product_content__item__btns">
                                 <button onClick={() => {
                                     if(!cartProduct && currentColor && currentSize) {
+                                        setErrorMode(false)
                                         AddCartProductToLocalStorage(product,currentColor,currentSize,currentQuanity)
                                     }else {
+                                        !currentColor && !currentSize && setErrorMode(true)
                                         cartProduct && localStorage.removeItem(cartProduct.id)
                                     }
                                     dispatch(setCartProducts(getLCItems('ave-product')))
