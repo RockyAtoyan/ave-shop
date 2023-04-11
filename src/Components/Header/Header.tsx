@@ -37,20 +37,32 @@ export const Header = () => {
     const categories = useSelector((state: AppStateType) => state.shop.categories)
 
     const menu = useRef<HTMLDivElement>(null)
+    const headerInner = useRef<HTMLDivElement>(null)
+    const body = document.querySelector('body')
 
     const catalogItems = categories.map((category, index) => {
-        return <MenuItem key={index} name={category.name} values={category.values} setMode={setShowMode}
-                         mode={showMode}/>
+        return <MenuItem key={index} name={category.name} values={category.values}/>
     })
 
     useEffect(() => {
         burger.current?.classList.remove('active')
         menu.current?.classList.remove('active')
+        headerInner.current?.classList.remove('active')
+        body?.classList.remove('active')
         setShowMode('')
     },[location.pathname])
 
     return <header className={'header'}>
-        <div className="header_inner">
+        <div className="header_logo mobile">
+            <NavLink to={'/'}><h1><span>avenue</span> fashion</h1></NavLink>
+        </div>
+        <div className="burger_menu" ref={burger} onClick={(event) => {
+            menu.current?.classList.toggle('active')
+            headerInner.current?.classList.toggle('active')
+            body?.classList.toggle('active')
+            event.currentTarget.classList.toggle('active')
+        }}></div>
+        <div className="header_inner" ref={headerInner}>
             <div className="header_header">
                 <div className="menu_container">
                     <div className="header_header__content">
@@ -72,7 +84,7 @@ export const Header = () => {
                     </div>
                     <div className="header_menu__content">
                         <nav className={'menu'} ref={menu}>
-                            <ul>
+                            <ul className={'menu_list'}>
                                 {catalogItems}
                             </ul>
                             <div className="header_search">
@@ -84,11 +96,13 @@ export const Header = () => {
                                 </button>
                             </div>
                         </nav>
-                        <div className="burger_menu" ref={burger} onClick={(event) => {
-                            menu.current?.classList.toggle('active')
-                            event.currentTarget.classList.toggle('active')
-                        }}></div>
                     </div>
+                    <li className="banner mobile">
+                        <h4>
+                            <span>Autumn sale! </span>
+                            up to 50% off
+                        </h4>
+                    </li>
                 </div>
             </div>
         </div>

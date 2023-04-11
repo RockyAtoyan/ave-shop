@@ -91,6 +91,7 @@ const initState = {
     cartProducts:[] as any[],
     lookbook:[] as any[],
     searchValue:'',
+    menuItem:''
 }
 
 export type ProductType = {
@@ -135,6 +136,8 @@ export const shopReducer = (state = initState,action:ActionsType) => {
         return {...state,lookbook: action.lookbook}
     } else if(action.type === 'set-search-value'){
         return {...state,searchValue: action.value}
+    } else if(action.type === 'set-menu-item'){
+        return {...state,menuItem: action.item}
     }
     return {...state}
 }
@@ -145,7 +148,8 @@ type ActionsType = setSortType |
     setFetchingType |
     setCartProductsType |
     setMyLookbookType |
-    setSearchValueType
+    setSearchValueType |
+    setMenuItemType
 
 type setSortType = {
     type:'set-sort',
@@ -183,6 +187,12 @@ type setMyLookbookType = {
     lookbook:any[]
 }
 export const setMyLookbook = (lookbook:any[]):setMyLookbookType => ({type:'set-lookbook',lookbook})
+
+type setMenuItemType = {
+    type:'set-menu-item',
+    item:string
+}
+export const setMenuItem = (item:string):setMenuItemType => ({type:'set-menu-item',item})
 
 
 type ThunkType = ThunkAction<Promise<void | any> | any, AppStateType, any, ActionsType>

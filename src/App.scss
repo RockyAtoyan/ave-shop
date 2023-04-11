@@ -1,3 +1,5 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 /***
     The new CSS reset - version 1.8.4 (last updated 14.2.2023)
     GitHub page: https://github.com/elad2412/the-new-css-reset
@@ -154,6 +156,29 @@ button {
 .header {
   background: #f8f8f8;
   width: 100%;
+  .header_logo.mobile{
+    display: none;
+  }
+  .banner {
+    &.mobile{
+      display: none;
+    }
+    width: 100%;
+    background: #333333;
+    text-align: center;
+    margin-top: 60px;
+    padding: 60px 40px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 500;
+
+    span {
+      font-weight: 700;
+    }
+  }
+  .burger_menu {
+    display: none;
+  }
   &_search{
     position: relative;
     button{
@@ -305,9 +330,7 @@ button {
     justify-content: space-between;
     padding: 40px 0;
 
-    .burger_menu {
-      display: none;
-    }
+
 
     input {
       border: 1px solid #c1c1c1;
@@ -371,20 +394,7 @@ button {
           background: #fff;
           box-shadow: 1px 30px 30px rgba(0, 0, 0, .1);
 
-          .banner {
-            width: 100%;
-            background: #333333;
-            text-align: center;
-            margin-top: 60px;
-            padding: 60px 40px;
-            color: #fff;
-            font-size: 36px;
-            font-weight: 500;
 
-            span {
-              font-weight: 700;
-            }
-          }
 
           ul {
             width: 50%;
@@ -508,7 +518,7 @@ button {
 
   h3 {
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     top: 10px;
     left: 10px;
     font-size: 21px;
@@ -1597,11 +1607,44 @@ button {
     align-items: stretch;
     gap: 20px;
     padding-bottom: 30px;
+    .product_slider{
+      width: 0;
+      .slick-arrow{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        color: #000;
+        transform: translate3d(0,-50%,0);
+        transition: all .3s ease;
+        z-index: 2;
+        &:hover{
+          color: #eeeeee;
+          background: #00c8c8;
+        }
+        &:before{
+          display: none;
+        }
+      }
+      .slick-prev{
+        left: 0;
+        transform: translate3d(0,-50%,0) rotate(180deg);
+      }
+      .slick-next{
+        right: 0;
+      }
+    }
     &>*{
       flex: 1 1 0;
     }
     &__img{
-
+        img{
+          width: 100%;
+          height: auto;
+        }
     }
     &__item{
       display: flex;
@@ -1884,22 +1927,68 @@ footer {
 }
 
 @media(max-width: 990px) {
+  body.active{
+    overflow: hidden;
+  }
   .main .home .intro_title {
     font-size: 136px;
+  }
+  .header .banner{
+    display: none;
+    &.mobile{
+      display: block;
+      margin-top: 0;
+    }
   }
   .main .home .intro_inner {
     margin-top: -111px;
   }
+  .header{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
   .header_menu {
     position: relative;
     z-index: 10;
+    flex-direction: column;
+    gap: 20px;
   }
-  .header_menu .burger_menu {
+  .header_menu .header_logo{
+    color: #eeeeee;
+  }
+  .header_header__content{
+    padding-right: 50px;
+  }
+  .header_inner{
+    position: fixed;
+    width: 90%;
+    height: 100vh;
+    top: 0;
+    background: #333333;
+    right: -100%;
+    z-index: 9;
+    transition: all .6s ease;
+    &.active{
+      right: 0;
+    }
+  }
+  .header .header_logo.mobile{
+    display: block;
+    text-transform: uppercase;
+    font-size: 24px;
+    span{
+      font-weight: 700;
+    }
+  }
+  .header .burger_menu {
     display: block;
     width: 30px;
     height: 2px;
-    background: #000;
+    z-index: 10;
     position: relative;
+    background: #000;
     border-radius: 10px;
     transition: all .3s ease;
 
@@ -1938,10 +2027,13 @@ footer {
     left: 0;
     right: auto;
   }
+  .header_menu__content{
+    width: 100%;
+  }
+  .header_search{
+    margin: 0 auto;
+  }
   .header .menu {
-    position: absolute;
-    left: 0;
-    top: 70%;
     width: 100%;
     visibility: hidden;
     flex-direction: column;
@@ -1950,11 +2042,9 @@ footer {
     background: #fff;
     padding: 20px;
     transition: opacity .5s ease;
-
     & > ul {
-
+      flex-direction: column;
     }
-
     &.active {
       visibility: visible;
       opacity: 1;
@@ -2109,7 +2199,13 @@ footer {
     }
   }
 }
-
+@media(max-width: 630px){
+  .header_header__content{
+    &>*:first-child{
+      display: none;
+    }
+  }
+}
 @media(max-width: 580px) {
   .posts_items {
     grid-template-columns: 1fr;
@@ -2134,6 +2230,7 @@ footer {
   .catalog_products{
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));;
   }
+
 }
 
 @media(max-width: 426px) {

@@ -9,13 +9,15 @@ import {Brand} from "./Components/Brand/Brand";
 import {Stores} from "./Components/Stores/Stores";
 import {Lookbook} from "./Components/Lookbook/Lookbook";
 import {Product} from "./Components/Product";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "./Components/store";
 import {Cart} from "./Components/Cart/Cart";
 import {Auth} from "./Components/Auth/Auth";
 import {SearchCatalog} from "./Components/Catalog/SearchCatalog";
+import {setMenuItem} from "./Components/shopReducer";
 
 const App = () => {
+    const dispatch = useDispatch()
 
     const items = useSelector((state:AppStateType) => state.shop.categories)
 
@@ -37,7 +39,12 @@ const App = () => {
 
 
     return (
-        <div className="wrapper">
+        <div className="wrapper" onClick={(event) => {
+            // @ts-ignore
+            if(!(event.target.className === 'submenu' || event.target.parentElement.className === 'banner' || event.target.parentElement.parentElement.className === 'banner' || event.target.className === 'submenu_link' || event.target.className === 'submenu__links' || event.target.className === 'menu_link' || event.target.className === 'banner')){
+                dispatch(setMenuItem(''))
+            }
+        }}>
             <Header />
             <main className={'main'}>
                 <Routes>
