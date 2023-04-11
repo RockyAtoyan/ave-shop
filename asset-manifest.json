@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/ave-shop/static/css/main.b1b0a931.css",
-    "main.js": "/ave-shop/static/js/main.e9fc35e4.js",
+    "main.css": "/ave-shop/static/css/main.b9129c7a.css",
+    "main.js": "/ave-shop/static/js/main.63501842.js",
     "static/js/787.0cc340ab.chunk.js": "/ave-shop/static/js/787.0cc340ab.chunk.js",
+    "static/media/slick.svg": "/ave-shop/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/ave-shop/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/ave-shop/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/ave-shop/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/ave-shop/index.html",
-    "main.b1b0a931.css.map": "/ave-shop/static/css/main.b1b0a931.css.map",
-    "main.e9fc35e4.js.map": "/ave-shop/static/js/main.e9fc35e4.js.map",
+    "main.b9129c7a.css.map": "/ave-shop/static/css/main.b9129c7a.css.map",
+    "main.63501842.js.map": "/ave-shop/static/js/main.63501842.js.map",
     "787.0cc340ab.chunk.js.map": "/ave-shop/static/js/787.0cc340ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1b0a931.css",
-    "static/js/main.e9fc35e4.js"
+    "static/css/main.b9129c7a.css",
+    "static/js/main.63501842.js"
   ]
 }
