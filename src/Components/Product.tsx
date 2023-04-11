@@ -97,10 +97,10 @@ export const Product = () => {
                     <div className="product_content">
                         <div className="product_slider">
                             <Slider {...settings} >
-                                <div className="product_content__img ">
+                                <div className="product_content__img ibg">
                                     <img src={product.image} alt=""/>
                                 </div>
-                                <div className="product_content__img ">
+                                <div className="product_content__img ibg">
                                     <img src={product.image} alt=""/>
                                 </div>
                             </Slider>
