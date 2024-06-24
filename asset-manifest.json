@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ave-shop/static/css/main.0a573625.css",
-    "main.js": "/ave-shop/static/js/main.eb074fe5.js",
+    "main.js": "/ave-shop/static/js/main.dc4fd954.js",
     "static/js/787.0cc340ab.chunk.js": "/ave-shop/static/js/787.0cc340ab.chunk.js",
     "static/media/slick.svg": "/ave-shop/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/ave-shop/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -9,11 +9,11 @@
     "static/media/slick.woff": "/ave-shop/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/ave-shop/index.html",
     "main.0a573625.css.map": "/ave-shop/static/css/main.0a573625.css.map",
-    "main.eb074fe5.js.map": "/ave-shop/static/js/main.eb074fe5.js.map",
+    "main.dc4fd954.js.map": "/ave-shop/static/js/main.dc4fd954.js.map",
     "787.0cc340ab.chunk.js.map": "/ave-shop/static/js/787.0cc340ab.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0a573625.css",
-    "static/js/main.eb074fe5.js"
+    "static/js/main.dc4fd954.js"
   ]
 }
