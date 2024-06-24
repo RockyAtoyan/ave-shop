@@ -24,8 +24,12 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export const getLCItems = (type: string) => {
-    return Object.keys(localStorage).map(key => JSON.parse(localStorage.getItem(key) + '')).filter(item => item.type === type)
-}
+    try {
+        return Object.keys(localStorage).map(key => localStorage.getItem(key) !== "undefined" ? JSON.parse(localStorage.getItem(key) + '') : null).filter(item => item && item.type === type)
+    } catch (e) {
+        return [];
+    }
+  }
 
 export const AddCartProductToLocalStorage = (product: ProductType, currentColor: string, currentSize: string, quanity: number) => {
     if (getLCItems('ave-product').some(item => item.productId === product.id)) return
